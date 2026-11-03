@@ -17,6 +17,22 @@ InsightFlow 使用一个主 Agent，根据问题选择在线调研工具或本�
 - **记忆与笔记**：召回历史偏好和判断，生成记忆更新提案，保存关联证据的笔记；记忆提案需要显式提交。
 - **可回放与可恢复**：提供离线资料集、CLI、调试控制台、调研预算和运行恢复能力。
 
+## 运行截图
+
+以下截图来自调试控制台的离线回放（固定流程基线），使用仓库内的虚构示例资料集。点击图片可查看原图。
+
+### 调研执行与证据报告
+
+左侧展示检索、原文读取和报告生成的事件记录，右侧展示带来源引用的结论、质量校验与证据清单。
+
+[![调研执行与证据报告](assets/screenshots/research-report.png)](assets/screenshots/research-report.png)
+
+### 覆盖检查与补搜
+
+发现主题覆盖不足后继续补搜，记录补搜原因、查询词、新增来源以及最终质量校验结果。
+
+[![覆盖检查与补搜](assets/screenshots/coverage-supplement.png)](assets/screenshots/coverage-supplement.png)
+
 ## 架构
 
 ```mermaid
