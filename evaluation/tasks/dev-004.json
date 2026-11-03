@@ -1,0 +1,17 @@
+{
+  "task_id": "dev-004",
+  "purpose": "补搜也找不到时要有界停止，并把未解决缺口写进报告",
+  "query": "最近一周 AI Agent 评测动态",
+  "days": 7,
+  "as_of": "2026-10-27T23:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "mode": "replay",
+  "fixture_id": "thin-2026-10-27",
+  "expect": {
+    "status": [
+      "partial"
+    ],
+    "stop_reason": "supplement_no_new_sources",
+    "min_sources": 1
+  }
+}

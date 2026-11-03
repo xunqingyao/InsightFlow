@@ -1,0 +1,49 @@
+{
+  "fixture_id": "briefing-2026-10-27",
+  "description": "虚构示例：AI Agent 评测动态。用于回放与自动化测试，任何内容都不对应真实事件。",
+  "synthetic": true,
+  "items": [
+    {
+      "url": "https://example.invalid/lab/eval-suite-x",
+      "title": "示例：某实验室发布 Agent 评测框架 X（虚构内容）",
+      "snippet": "覆盖工具调用、长程任务与多轮纠错三类场景，公开了任务定义与评测脚本。",
+      "kind": "official",
+      "role": "official",
+      "published_at": "2026-10-24T01:30:00+00:00",
+      "page": "pages/official-eval-suite.html",
+      "queries": [
+        "评测",
+        "Agent",
+        "发布"
+      ]
+    },
+    {
+      "url": "https://example.invalid/media/report-eval-suite-x",
+      "title": "示例媒体转载：Agent 评测框架 X 引关注（虚构内容）",
+      "snippet": "转述示例实验室博客，补充了第三方研究者对任务集过拟合的担忧。",
+      "kind": "media",
+      "role": "reprint",
+      "published_at": "2026-10-25T03:05:00+00:00",
+      "page": "pages/media-reprint.html",
+      "queries": [
+        "评测",
+        "Agent",
+        "关注"
+      ]
+    },
+    {
+      "url": "https://example.invalid/preprint/lhb",
+      "title": "示例论文摘要：长程工具调用基准 LHB（虚构内容）",
+      "snippet": "一百二十个十步以上工具交互任务，错误恢复策略比单步规划更能拉开差距。",
+      "kind": "paper",
+      "role": "original",
+      "published_at": "2026-10-22T08:00:00+08:00",
+      "page": "pages/paper-longhorizon-bench.html",
+      "queries": [
+        "基准",
+        "工具调用",
+        "Agent"
+      ]
+    }
+  ]
+}

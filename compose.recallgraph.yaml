@@ -1,0 +1,21 @@
+# 本地开发用 PostgreSQL + pgvector。端口用 5434，避免与本机已有的 5433 实例冲突。
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: insightflow-recallgraph-db
+    environment:
+      POSTGRES_USER: recallgraph
+      POSTGRES_PASSWORD: recallgraph
+      POSTGRES_DB: recallgraph
+    ports:
+      - "5434:5432"
+    volumes:
+      - recallgraph-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U recallgraph -d recallgraph"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  recallgraph-pgdata:

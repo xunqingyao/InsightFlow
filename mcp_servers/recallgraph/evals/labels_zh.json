@@ -1,0 +1,207 @@
+{
+  "about": "中文/跨语言检索标注集。gold 由人工阅读段落原文确认：2=直接回答，1=部分相关或提供必要条件。",
+  "method": "先按关键词定位候选，再逐条读 chunk 原文确认；只收真正能回答问题的段落，不要求含关键词。",
+  "annotated_at": "2026-10-28",
+  "dropped": [
+    {
+      "query": "证据包最后要控制在多少个块",
+      "reason": "语料里没有这一句（8–12 块的原文未入库），无 gold 可标"
+    }
+  ],
+  "questions": [
+    {
+      "query": "记忆事件要记录哪几个时间",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0013": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "为什么不能把长期记忆塞进 checkpoint",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0013": 2,
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0016": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "评测集分几类问题、一共多少题",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0020": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "二开要新增哪些 Agent 工具",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0015": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "图谱的方向信息存在哪里",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0009": 2,
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0025": 1
+      },
+      "note": ""
+    },
+    {
+      "query": "RAG 训练时更新哪些参数",
+      "relevant": {
+        "01M5YY0AC7C8H26YMFFZ074E9Y:0001": 2,
+        "01M5YXRH2PSSXCP19WTMMBZZYB:0017": 1
+      },
+      "note": ""
+    },
+    {
+      "query": "RAG-Token 和 RAG-Sequence 有什么区别",
+      "relevant": {
+        "01M5YXRH2PSSXCP19WTMMBZZYB:0013": 2,
+        "01M5YXRH2PSSXCP19WTMMBZZYB:0018": 2,
+        "01M5YY0AC7C8H26YMFFZ074E9Y:0002": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "为什么 EXTRACTED 不等于被验证",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0005": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "检索召回之后用什么做融合",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0017": 2,
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0026": 2,
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0011": 1
+      },
+      "note": ""
+    },
+    {
+      "query": "切块要保留什么粒度的页码信息",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0007": 2,
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0006": 1
+      },
+      "note": ""
+    },
+    {
+      "query": "我的推测和论文结论怎么区分",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0008": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "简历上的数字为什么要等实现之后再写",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0021": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "Graphify 怎么把图组织成社区",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0009": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "证据包怎么做 token 预算",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0012": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "笔记和断言是怎么关联的",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0006": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "改了文档怎么知道影响了哪些结论",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0026": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "Claim 和 Evidence 有什么区别",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0006": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "为什么断言必须能回到原文",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0008": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "图谱里的实体怎么对齐",
+      "relevant": {
+        "01M606W5WZ6F9D2E4KMRJWQX6D:0009": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "检索器和生成器是怎么联合训练的",
+      "relevant": {
+        "01M5YY0AC7C8H26YMFFZ074E9Y:0001": 2,
+        "01M5YXRH2PSSXCP19WTMMBZZYB:0017": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "批归一化加在网络的什么位置",
+      "relevant": {
+        "01M5YXRH8D1FVR3N9F80DN3T3F:0022": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "RAG 用哪种稠密检索器",
+      "relevant": {
+        "01M5YXRH2PSSXCP19WTMMBZZYB:0007": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "RAG 和什么端到端模型做了对比",
+      "relevant": {
+        "01M5YXRH2PSSXCP19WTMMBZZYB:0031": 2,
+        "01M5YXRH2PSSXCP19WTMMBZZYB:0028": 1
+      },
+      "note": ""
+    },
+    {
+      "query": "ResNet 在 ImageNet 上的错误率是多少",
+      "relevant": {
+        "01M5YXRH8D1FVR3N9F80DN3T3F:0031": 2,
+        "01M5YXRH8D1FVR3N9F80DN3T3F:0001": 1
+      },
+      "note": ""
+    },
+    {
+      "query": "训练 RAG 时哪些参数被冻结",
+      "relevant": {
+        "01M5YY0AC7C8H26YMFFZ074E9Y:0001": 2
+      },
+      "note": ""
+    },
+    {
+      "query": "RAG 生成时用什么搜索策略",
+      "relevant": {
+        "01M5YXRH2PSSXCP19WTMMBZZYB:0018": 2,
+        "01M5YXRH2PSSXCP19WTMMBZZYB:0019": 2
+      },
+      "note": ""
+    }
+  ]
+}

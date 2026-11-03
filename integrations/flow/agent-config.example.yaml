@@ -1,0 +1,47 @@
+# InsightFlow Agent runtime. Copy to config.yaml; keep credentials in .env.
+config_version: 3
+
+models:
+  - name: default
+    display_name: Research model
+    use: langchain_openai:ChatOpenAI
+    model: $MODEL_NAME
+    base_url: $MODEL_BASE_URL
+    api_key: $MODEL_API_KEY
+    supports_vision: false
+    supports_thinking: false
+
+sandbox:
+  use: flow.sandbox.local:LocalSandboxProvider
+
+tools:
+  - name: ls
+    group: filesystem
+    use: flow.sandbox.tools:ls_tool
+  - name: read_file
+    group: filesystem
+    use: flow.sandbox.tools:read_file_tool
+  - name: write_file
+    group: filesystem
+    use: flow.sandbox.tools:write_file_tool
+  - name: str_replace
+    group: filesystem
+    use: flow.sandbox.tools:str_replace_tool
+  - name: bash
+    group: filesystem
+    use: flow.sandbox.tools:bash_tool
+
+tool_groups:
+  - name: filesystem
+
+checkpointer:
+  type: memory
+
+title:
+  enabled: false
+
+memory:
+  enabled: false
+
+tool_search:
+  enabled: false

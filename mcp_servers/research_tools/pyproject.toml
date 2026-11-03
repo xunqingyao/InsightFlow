@@ -1,0 +1,22 @@
+[project]
+name = "research-tools"
+version = "0.1.0"
+description = "InsightFlow 本地 Research Tools MCP 服务（stdio）"
+requires-python = ">=3.12"
+dependencies = [
+    "insightflow",
+    "mcp>=1.0",
+]
+
+[project.scripts]
+research-tools = "research_tools.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["research_tools"]
+
+[tool.uv.sources]
+insightflow = { workspace = true }

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>InsightFlow · 多源研究简报</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark">IF</span>
+        <div class="brand-text">
+          <h1>InsightFlow</h1>
+          <p>说一句话，读几篇原文，写一份每条结论都能回到原文的简报</p>
+        </div>
+      </div>
+      <div class="env">
+        <span class="pill" id="pill-search">搜索：检查中…</span>
+        <span class="pill" id="pill-model">模型：检查中…</span>
+        <button type="button" class="link" id="btn-help">怎么用</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="panel side">
+        <form id="form" autocomplete="off">
+          <label class="field">
+            <span class="label">研究问题</span>
+            <textarea id="query" rows="3" maxlength="2000">最近一周 AI Agent 评测有什么新动态？</textarea>
+          </label>
+
+          <div class="row">
+            <label class="field">
+              <span class="label">时间窗口</span>
+              <select id="days">
+                <option value="1">最近 1 天</option>
+                <option value="3">最近 3 天</option>
+                <option value="7" selected>最近 7 天</option>
+                <option value="14">最近 14 天</option>
+                <option value="30">最近 30 天</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="label">数据来源</span>
+              <select id="mode">
+                <option value="replay" selected>回放快照（离线可用）</option>
+                <option value="online">在线检索（需要 key）</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field" id="fixture-field">
+            <span class="label">回放资料</span>
+            <select id="fixture"></select>
+          </label>
+
+          <div class="actions">
+            <button type="submit" class="primary" id="btn-run">开始研究</button>
+            <button type="button" class="ghost" id="btn-cancel" disabled>取消</button>
+          </div>
+          <p class="hint" id="hint"></p>
+        </form>
+
+        <section class="progress" id="progress" hidden>
+          <div class="progress-head">
+            <span class="status" id="status-pill">排队中</span>
+            <span class="muted" id="counter"></span>
+          </div>
+          <ol class="timeline" id="timeline" aria-live="polite"></ol>
+        </section>
+      </aside>
+
+      <section class="panel report-panel">
+        <div class="report-toolbar" id="report-toolbar" hidden>
+          <div class="toolbar-left">
+            <span class="status" id="report-status">—</span>
+            <span class="muted" id="report-meta"></span>
+          </div>
+          <div class="toolbar-right">
+            <button type="button" class="link" id="btn-download">下载 Markdown</button>
+          </div>
+        </div>
+
+        <div class="empty" id="empty-state">
+          <h2>还没有报告</h2>
+          <p>左边输入一个问题，点「开始研究」。它会先规划检索词，再逐篇读原文，最后把读到的内容写成简报。</p>
+          <p class="muted">现在默认走「回放快照」：用三份固定的示例网页跑完整条链路，不联网、不需要 key。想接真实互联网，在 <code>.env</code> 里填 <code>TAVILY_API_KEY</code> 与模型 key，再选「在线检索」。</p>
+          <div class="examples" id="examples">
+            <button type="button" class="chip" data-q="最近一周 AI Agent 评测有什么新动态？">最近一周 AI Agent 评测有什么新动态？</button>
+            <button type="button" class="chip" data-q="最近一个月长程工具调用基准有什么进展？">最近一个月长程工具调用基准有什么进展？</button>
+          </div>
+        </div>
+
+        <article class="prose" id="report-body" hidden></article>
+
+        <section class="report-extra" id="report-extra" hidden>
+          <div class="checks" id="checks"></div>
+          <div class="sources" id="sources"></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="help">
+      <h2>这个页面在做什么</h2>
+      <p>你给出一个问题，它做四件事：</p>
+      <ol>
+        <li><strong>规划检索词</strong>：把问题拆成几条搜索请求。</li>
+        <li><strong>读原文</strong>：打开搜索结果里的页面，存下正文快照。</li>
+        <li><strong>写结论</strong>：每条结论必须引用正文里的原句，引用对不上原文的结论会被丢掉。</li>
+        <li><strong>自查</strong>：检查引用是否登记、来源是否在时间窗口内、转载是否被当成独立验证。</li>
+      </ol>
+      <p>右侧每一步都能看到。点「取消」会停在当前阶段，不生成报告。</p>
+      <p class="muted">「发布方说法 / 部分支撑」这类标注不是装饰：它在告诉你这条结论只有一家之言，还没有第二方确认。</p>
+      <form method="dialog"><button class="primary">知道了</button></form>
+    </dialog>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "_comment": "两个独立 MCP 服务共用一个主 Agent。执行 configure_mcp.py 生成本机路径并安装两个 Skill。",
+  "mcpServers": {
+    "research-tools": {
+      "enabled": true,
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--all-packages",
+        "--project",
+        "/absolute/path/to/InsightFlow",
+        "research-tools"
+      ],
+      "env": {
+        "INSIGHTFLOW_DATA_DIR": "/absolute/path/to/InsightFlow/.data",
+        "TAVILY_API_KEY": "$TAVILY_API_KEY",
+        "GITHUB_TOKEN": "$GITHUB_TOKEN",
+        "INSIGHTFLOW_MODEL_BASE_URL": "$INSIGHTFLOW_MODEL_BASE_URL",
+        "INSIGHTFLOW_MODEL_API_KEY": "$INSIGHTFLOW_MODEL_API_KEY",
+        "INSIGHTFLOW_MODEL_NAME": "$INSIGHTFLOW_MODEL_NAME"
+      },
+      "description": "InsightFlow 研究工具：固定时间窗口的检索、读原文、带引文的结论提交与报告出版。"
+    },
+    "recallgraph": {
+      "enabled": true,
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--all-packages",
+        "--project",
+        "/absolute/path/to/InsightFlow",
+        "recallgraph-mcp"
+      ],
+      "env": {
+        "RECALLGRAPH_DSN": "postgresql://recallgraph:recallgraph@127.0.0.1:5434/recallgraph",
+        "DASHSCOPE_API_KEY": "$DASHSCOPE_API_KEY",
+        "RECALLGRAPH_EMBEDDING_MODEL": "text-embedding-v3"
+      },
+      "description": "RecallGraph 本地资料与事件记忆：检索、页码原文、图谱、记忆召回、提案和笔记。"
+    }
+  }
+}

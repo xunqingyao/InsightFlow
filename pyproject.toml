@@ -1,0 +1,6 @@
+[tool.uv.workspace]
+members = ["backend", "mcp_servers/research_tools", "mcp_servers/recallgraph"]
+
+[tool.uv]
+# 根目录只是工作区锚点，本身不发布包
+package = false

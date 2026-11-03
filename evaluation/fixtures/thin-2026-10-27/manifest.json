@@ -1,0 +1,20 @@
+{
+  "fixture_id": "thin-2026-10-27",
+  "description": "虚构示例：只有一个来源，用来演示“补搜也找不到时必须如实说资料不足”。",
+  "synthetic": true,
+  "items": [
+    {
+      "url": "https://example.invalid/thin/models-m2",
+      "title": "示例：推理模型 M2 发布（虚构内容）",
+      "snippet": "某实验室发布推理模型 M2，宣称准确率提升，未给出第三方复现。",
+      "kind": "official",
+      "role": "official",
+      "published_at": "2026-10-24T02:00:00+00:00",
+      "page": "pages/models-m2.html",
+      "queries": [
+        "评测",
+        "发布"
+      ]
+    }
+  ]
+}

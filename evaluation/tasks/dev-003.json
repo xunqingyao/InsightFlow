@@ -1,0 +1,19 @@
+{
+  "task_id": "dev-003",
+  "purpose": "用户关心的主题缺来源时，必须先补搜一轮，补齐后才发布",
+  "query": "最近一周 AI Agent 评测动态",
+  "days": 7,
+  "as_of": "2026-10-27T23:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "mode": "replay",
+  "fixture_id": "supplement-2026-10-27",
+  "expect": {
+    "status": [
+      "completed"
+    ],
+    "min_sources": 2,
+    "min_findings": 1,
+    "supplement_rounds": 1,
+    "checks_all_pass": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "task_id": "dev-002",
+  "purpose": "窗口内没有新来源时必须暴露时间问题，而不是把旧文当新增",
+  "query": "最近一天 AI Agent 评测动态",
+  "days": 1,
+  "as_of": "2026-10-27T23:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "mode": "replay",
+  "fixture_id": "briefing-2026-10-27",
+  "expect": {
+    "status": ["partial"],
+    "min_sources": 3,
+    "warn_checks": ["time_window"]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fixture_id": "supplement-2026-10-27",
+  "description": "虚构示例：第一次只覆盖模型发布，用来演示“发现缺口→补搜智能体主题”。",
+  "synthetic": true,
+  "items": [
+    {
+      "url": "https://example.invalid/supplement/models-m2",
+      "title": "示例：推理模型 M2 发布（虚构内容）",
+      "snippet": "某实验室发布推理模型 M2，宣称准确率提升，未给出第三方复现。",
+      "kind": "official",
+      "role": "official",
+      "published_at": "2026-10-24T02:00:00+00:00",
+      "page": "pages/models-m2.html",
+      "queries": [
+        "评测",
+        "发布"
+      ]
+    },
+    {
+      "url": "https://example.invalid/supplement/agents-kit",
+      "title": "示例：智能体框架 AgentKit 更新（虚构内容）",
+      "snippet": "AgentKit 0.9 增加多步工具调用与失败重试，仍是预览版。",
+      "kind": "repo",
+      "role": "original",
+      "published_at": "2026-10-24T06:00:00+00:00",
+      "page": "pages/agents-kit.html",
+      "queries": [
+        "智能体"
+      ]
+    }
+  ]
+}

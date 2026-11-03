@@ -1,0 +1,34 @@
+[project]
+name = "recallgraph"
+version = "0.1.0"
+description = "RecallGraph：具有证据溯源与记忆更新能力的个人知识 Agent"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+    "pypdf>=4.0",
+    "psycopg[binary]>=3.1",
+    "jieba>=0.42",
+    "fastembed>=0.9.1",
+    "mcp>=2.3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+recallgraph = "recallgraph.cli:main"
+recallgraph-mcp = "recallgraph.mcp_server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["recallgraph"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = [".uv-cache", "evals/data", "graphify", "insightflow-ref"]
